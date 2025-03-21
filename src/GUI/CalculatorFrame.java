@@ -85,23 +85,18 @@ public class CalculatorFrame extends JFrame implements ActionListener {
 
         if ((Objects.equals(e.getActionCommand(), "B"))
                         && answerLine.getText().length() == 1) {
-            System.out.println("first");
             answerLine.setText("0");
         }
 
         else if (Objects.equals(e.getActionCommand(), "B")) {
-            System.out.println("second");
             answerLine.setText(answerLine.getText().substring(0, answerLine.getText().length() - 1));
         }
 
         else if (Objects.equals(e.getActionCommand(), ".") && (answerLine.getText().indexOf('.') != -1)) {
-            System.out.println(answerLine.getText().indexOf('.'));
             answerLine.setText(answerLine.getText());
         }
 
         else if (!Objects.equals(answerLine.getText(), "0")) {
-            System.out.println(answerLine.getText().indexOf('.'));
-            System.out.println("fourth");
             answerLine.setText(answerLine.getText() + e.getActionCommand());
         }
 
