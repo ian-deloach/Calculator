@@ -8,18 +8,6 @@ import java.util.Objects;
 public class CalculatorFrame extends JFrame implements ActionListener {
 
     JLabel answerLine = new JLabel("0");
-    private final JButton btn1 = new JButton("1");
-    private final JButton btn2 = new JButton("2");
-    private final JButton btn3 = new JButton("3");
-    private final JButton btn4 = new JButton("4");
-    private final JButton btn5 = new JButton("5");
-    private final JButton btn6 = new JButton("6");
-    private final JButton btn7 = new JButton("7");
-    private final JButton btn8 = new JButton("8");
-    private final JButton btn9 = new JButton("9");
-    private final JButton btn0 = new JButton("0");
-    private final JButton btnBack = new JButton("B");
-    private final JButton btnDecimal = new JButton(".");
 
     public CalculatorFrame() {
         this.setTitle("Calculator");
@@ -51,18 +39,20 @@ public class CalculatorFrame extends JFrame implements ActionListener {
         panel.setBackground(Color.GRAY);
         panel.setLayout(new GridLayout(4, 3));
         panel.setBounds(4, 60, 276, 396);
-        btn1.addActionListener(this);
-        btn2.addActionListener(this);
-        btn3.addActionListener(this);
-        btn4.addActionListener(this);
-        btn5.addActionListener(this);
-        btn6.addActionListener(this);
-        btn7.addActionListener(this);
-        btn8.addActionListener(this);
-        btn9.addActionListener(this);
-        btn0.addActionListener(this);
-        btnBack.addActionListener(this);
-        btnDecimal.addActionListener(this);
+
+        CalculatorButton btn1 = new CalculatorButton("1", this);
+        CalculatorButton btn2 = new CalculatorButton("2", this);
+        CalculatorButton btn3 = new CalculatorButton("3", this);
+        CalculatorButton btn4 = new CalculatorButton("4", this);
+        CalculatorButton btn5 = new CalculatorButton("5", this);
+        CalculatorButton btn6 = new CalculatorButton("6", this);
+        CalculatorButton btn7 = new CalculatorButton("7", this);
+        CalculatorButton btn8 = new CalculatorButton("8", this);
+        CalculatorButton btn9 = new CalculatorButton("9", this);
+        CalculatorButton btn0 = new CalculatorButton("0", this);
+        CalculatorButton btnDecimal = new CalculatorButton(".", this);
+
+        CalculatorButton btnBack = new CalculatorButton("B", this);
 
         panel.add(btn1);
         panel.add(btn2);
@@ -82,6 +72,7 @@ public class CalculatorFrame extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
 
         if ((Objects.equals(e.getActionCommand(), "B"))
                         && answerLine.getText().length() == 1) {
