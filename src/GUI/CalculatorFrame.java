@@ -3,11 +3,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class CalculatorFrame extends JFrame implements ActionListener {
 
     JLabel answerLine = new JLabel("0");
+    ArrayList<CalculatorButton> buttons = new ArrayList<>();
 
     public CalculatorFrame() {
         this.setTitle("Calculator");
@@ -37,35 +39,37 @@ public class CalculatorFrame extends JFrame implements ActionListener {
     public JPanel createButtonPanel() {
         JPanel panel = new JPanel();
         panel.setBackground(Color.GRAY);
-        panel.setLayout(new GridLayout(4, 3));
+        panel.setLayout(new GridLayout(5, 4));
         panel.setBounds(4, 60, 276, 396);
 
-        CalculatorButton btn1 = new CalculatorButton("1", this);
-        CalculatorButton btn2 = new CalculatorButton("2", this);
-        CalculatorButton btn3 = new CalculatorButton("3", this);
-        CalculatorButton btn4 = new CalculatorButton("4", this);
-        CalculatorButton btn5 = new CalculatorButton("5", this);
-        CalculatorButton btn6 = new CalculatorButton("6", this);
-        CalculatorButton btn7 = new CalculatorButton("7", this);
-        CalculatorButton btn8 = new CalculatorButton("8", this);
-        CalculatorButton btn9 = new CalculatorButton("9", this);
-        CalculatorButton btn0 = new CalculatorButton("0", this);
-        CalculatorButton btnDecimal = new CalculatorButton(".", this);
+        buttons.add(new CalculatorButton("T", this));
+        buttons.add(new CalculatorButton("M", this));
+        buttons.add(new CalculatorButton("C", this));
+        buttons.add(new CalculatorButton("/", this));
 
-        CalculatorButton btnBack = new CalculatorButton("B", this);
+        buttons.add(new CalculatorButton("7", this));
+        buttons.add(new CalculatorButton("8", this));
+        buttons.add(new CalculatorButton("9", this));
+        buttons.add(new CalculatorButton("*", this));
 
-        panel.add(btn1);
-        panel.add(btn2);
-        panel.add(btn3);
-        panel.add(btn4);
-        panel.add(btn5);
-        panel.add(btn6);
-        panel.add(btn7);
-        panel.add(btn8);
-        panel.add(btn9);
-        panel.add(btnBack);
-        panel.add(btn0);
-        panel.add(btnDecimal);
+        buttons.add(new CalculatorButton("4", this));
+        buttons.add(new CalculatorButton("5", this));
+        buttons.add(new CalculatorButton("6", this));
+        buttons.add(new CalculatorButton("-", this));
+
+        buttons.add(new CalculatorButton("1", this));
+        buttons.add(new CalculatorButton("2", this));
+        buttons.add(new CalculatorButton("3", this));
+        buttons.add(new CalculatorButton("+", this));
+
+        buttons.add(new CalculatorButton("B", this));
+        buttons.add(new CalculatorButton("0", this));
+        buttons.add(new CalculatorButton(".", this));
+        buttons.add(new CalculatorButton("=", this));
+
+        for(CalculatorButton button : buttons) {
+            panel.add(button);
+        }
 
         return panel;
     }
