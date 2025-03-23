@@ -8,18 +8,18 @@ import java.util.Objects;
 public class CalculatorFrame extends JFrame implements ActionListener {
 
     JLabel answerLine = new JLabel("0");
-    private JButton btn1 = new JButton("1");
-    private JButton btn2 = new JButton("2");
-    private JButton btn3 = new JButton("3");
-    private JButton btn4 = new JButton("4");
-    private JButton btn5 = new JButton("5");
-    private JButton btn6 = new JButton("6");
-    private JButton btn7 = new JButton("7");
-    private JButton btn8 = new JButton("8");
-    private JButton btn9 = new JButton("9");
-    private JButton btn0 = new JButton("0");
-    private JButton btnBack = new JButton("B");
-    private JButton btnDecimal = new JButton(".");
+    private final JButton btn1 = new JButton("1");
+    private final JButton btn2 = new JButton("2");
+    private final JButton btn3 = new JButton("3");
+    private final JButton btn4 = new JButton("4");
+    private final JButton btn5 = new JButton("5");
+    private final JButton btn6 = new JButton("6");
+    private final JButton btn7 = new JButton("7");
+    private final JButton btn8 = new JButton("8");
+    private final JButton btn9 = new JButton("9");
+    private final JButton btn0 = new JButton("0");
+    private final JButton btnBack = new JButton("B");
+    private final JButton btnDecimal = new JButton(".");
 
     public CalculatorFrame() {
         this.setTitle("Calculator");
